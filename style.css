@@ -1,0 +1,302 @@
+:root {
+    --bg: #071630;
+    --bg-soft: #0d2348;
+    --surface: #122c59;
+    --surface-2: #17386f;
+    --text: #f6f9ff;
+    --text-soft: #c8d8f8;
+    --line: #2f4f86;
+    --accent: #4a92ff;
+    --accent-soft: rgba(74, 146, 255, 0.15);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Calibri, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text);
+    background: linear-gradient(180deg, #051126 0%, #0a1d3d 45%, #0c2450 100%);
+}
+
+h1,
+h2,
+h3 {
+    margin: 0 0 10px;
+    font-weight: 700;
+    color: #fff;
+}
+
+h1 {
+    font-size: 34px;
+    text-align: center;
+}
+
+p {
+    margin: 0 0 10px;
+    font-size: 16px;
+    color: var(--text-soft);
+}
+
+img {
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+}
+
+a {
+    color: #8fbeff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+header {
+    min-height: 110px;
+    padding: 20px 16px 10px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #06142d 0%, #102e63 100%);
+    border-bottom: 1px solid var(--line);
+}
+
+marquee {
+    margin-top: 8px;
+}
+
+footer {
+    min-height: 80px;
+    padding: 24px 16px;
+    text-align: center;
+    color: var(--text-soft);
+    background-color: #081a37;
+    border-top: 1px solid var(--line);
+}
+
+nav {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(8, 26, 55, 0.9);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    list-style: none;
+}
+
+nav a {
+    display: inline-block;
+    padding: 14px 20px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    font-size: 14px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav li:hover a {
+    background: var(--accent-soft);
+    color: #ffffff;
+}
+
+.table {
+    width: 100%;
+    margin: 0 auto;
+}
+
+section {
+    width: min(1100px, 92%);
+    min-height: 30px;
+    margin: 16px auto;
+    padding: 20px 0;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: linear-gradient(180deg, rgba(20, 48, 94, 0.8), rgba(11, 31, 63, 0.9));
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.32);
+}
+
+.presentation,
+.parcours,
+.competences,
+.recommandation,
+.orange,
+.gris,
+.blue {
+    border-top: 4px solid var(--accent);
+}
+
+.sec {
+    margin: 0 6%;
+}
+
+.left,
+.right,
+.cleft,
+.cright,
+.sousleft,
+.sousright,
+.leftexp,
+.rightexp,
+.righttexp {
+    float: left;
+}
+
+.left {
+    width: 40%;
+}
+
+.right {
+    width: 60%;
+}
+
+.presentation .right {
+    padding-left: 28px;
+}
+
+.cleft,
+.cright,
+.sousleft,
+.sousright {
+    width: 50%;
+}
+
+.leftexp {
+    width: 45%;
+}
+
+.righttexp,
+.rightexp {
+    width: 50%;
+    margin-left: 5%;
+}
+
+.leftexp img,
+.rightexp img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+.sec::after,
+.exp::after,
+.reco::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.ap {
+    padding: 0 8%;
+    font-size: 18px;
+    font-variant: small-caps;
+}
+
+.ap li {
+    margin-bottom: 6px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    body,
+    a,
+    button,
+    input,
+    textarea,
+    select,
+    label {
+        cursor: none !important;
+    }
+}
+
+.cursor-dot,
+.cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+}
+
+.cursor-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 0 14px rgba(255, 255, 255, 0.7);
+}
+
+.cursor-ring {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 2px solid #4a92ff;
+    box-shadow: 0 0 18px rgba(74, 146, 255, 0.45);
+    transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
+}
+
+.cursor-ring.cursor-hover {
+    width: 44px;
+    height: 44px;
+    border-color: #ffffff;
+}
+
+@media screen and (max-width: 900px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    .left,
+    .right,
+    .cleft,
+    .cright,
+    .sousleft,
+    .sousright,
+    .leftexp,
+    .rightexp,
+    .righttexp {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    nav a {
+        padding: 11px 12px;
+        font-size: 12px;
+    }
+
+    section {
+        width: min(1100px, 95%);
+        margin: 12px auto;
+    }
+
+    .ap {
+        padding: 0 6%;
+        font-size: 16px;
+    }
+
+    .presentation .right {
+        padding-left: 0;
+    }
+}
